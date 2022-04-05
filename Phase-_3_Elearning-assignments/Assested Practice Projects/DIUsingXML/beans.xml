@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+
+
+
+
+<bean scope="singleton" id="emp1" class="com.Employee"/>
+
+<bean scope="prototype" id="emp2" class="com.Employee"/>
+
+
+<bean id="emp3" class="com.Employee">
+
+<constructor-arg value="100"/>
+
+<constructor-arg value="Ramesh"/>
+
+<constructor-arg value="12000"/>
+
+</bean>
+
+
+<bean id="emp4" class="com.Employee">
+
+<property value="101" name="id"/>
+
+<property value="Ajay" name="name"/>
+
+<property value="14000" name="salary"/>
+
+</bean>
+
+
+<bean id="emp5" class="com.Employee">
+
+<property value="17000" name="salary"/>
+
+<property value="Vijay" name="name"/>
+
+</bean>
+
+
+<bean id="employee" class="com.Employee" autowire="byName">
+
+<property value="123" name="id"/>
+
+<property value="Mahesh" name="name"/>
+
+<property value="45000" name="salary"/>
+
+<!-- <property name="add" ref="address"></property> -->
+
+
+</bean>
+
+
+<bean id="ladd" class="com.Address">
+
+<property value="Bangalore" name="city"/>
+
+<property value="Kar" name="state"/>
+
+</bean>
+
+
+<bean id="add" class="com.Address">
+
+<property value="Mumbai" name="city"/>
+
+<property value="Mh" name="state"/>
+
+</bean>
+
+</beans>
